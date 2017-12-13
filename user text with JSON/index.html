@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User text</title>
+    <link rel="shortcut icon" href="assets/pictures/img/plant.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div  class="container" id="app">
+
+        <div class="wrapper">
+
+            <h1 class="caption">{{message}}</h1>
+            <p class="text">Enter something into the field and the text above will change</p>
+
+            <input type="text" class="field" v-model="message" />
+
+            <pre>{{ $data | json }}</pre>
+
+        </div>
+
+    </div>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+    <script src="js/VueAhVue.js"></script>
+
+</body>
+</html>
