@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show cat's paw</title>
+    <link rel="shortcut icon" href="assets/pictures/img/paw.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+</head>
+<body>
+
+    <div  class="container" id="app">
+
+        <img src="assets/pictures/svg/paw.svg" class="img" v-if="show" />
+        <img src="assets/pictures/svg/cat.svg" class="img" v-else />
+
+        <button class="btn" @click="show = !show">Push me</button>
+
+    </div>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.10/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: false
+            }
+        })
+    </script>
+
+
+</body>
+</html>
