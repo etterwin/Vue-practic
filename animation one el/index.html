@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show cat's paw</title>
+    <link rel="shortcut icon" href="assets/pictures/img/paw.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+
+        <div v-if="!showMessage" class="block" @click.prevent="showMessage = true">
+            <a class="button is-primary">Show cat</a>
+        </div>
+
+        <div v-else-if="showMessage" class="block" @click.prevent="showMessage = false">
+            <a class="button is-primary">Hide cat</a>
+        </div>
+
+        <transition name="fade">
+            <div v-show="showMessage" class="tr pop-up-message">
+                <img src="assets/pictures/svg/cat.svg" slot="cat">
+            </div>
+        </transition>
+
+    </div>
+
+    <!-- js -->
+    <script src="js/vue.js"></script>
+
+</body>
+</html>
