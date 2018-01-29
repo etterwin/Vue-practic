@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make filter</title>
+    <link rel="shortcut icon" href="assets/pictures/img/paw.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="app">
+
+        <input type="text" v-model="input" autofocus />
+
+        <ul>
+            <li v-for="item in array | filterBy input">{{ item.name }}, {{ item.age }}</li>
+        </ul>
+
+    </div>
+
+    <!-- script -->
+    <script >
+        new Vue ({
+            el: "#app",
+            data: {
+                input: '',
+                array: [
+                    {
+                        name: 'Lol1',
+                        age: '29'
+                    },
+                    {
+                        name: 'Lol2',
+                        age: '28'
+                    },
+                    {
+                        name: 'Lol3',
+                        age: '27'
+                    },
+                ]
+            }
+        });
+    </script>
+
+</body>
+</html>

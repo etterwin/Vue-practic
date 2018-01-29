@@ -1,0 +1,128 @@
+#Фильтры вне текстовых тегов удалены
+Теперь фильтры могут использоваться только внутри строчных(текстовых) тегов({{}} теги). В прошлом мы использовали фильтры
+с директивами, например v-model, v-on и так дале, что привело к сложностям, а не упростить жизнь разработчика.
+Будет лучше перенести логику фильтрации на JavaScript, чтобы вычислительные свойства можно было использовать во всем компоненте.
+
+Всякий раз, когда что-то может быть достигнуто силами JavaScript, лучше избегать специального синтаксиса, каким является filters.
+Как вы можете заменить встроенные фильтры в Vue:
+
+###1. Замена debounce
+Вместо
+```
+<input v-on:keyup="doStuff | debounce 500">
+```
+```
+methods: {
+  doStuff: function () {
+    // ...
+  }
+}
+```
+Используйте функцию _.debounce библиотеки lodash (или, возможно, throttle). Вы можете достичь того же результата, что в коде выше:
+```
+<input v-on:keyup="doStuff">
+```
+```
+methods: {
+  doStuff: _.debounce(function () {
+    // ...
+  }, 500)
+}
+```
+Смотрите больше по ссылке на примеры использования v-model.
+
+###2. Замена limitBy
+Вместо
+```
+<p v-for="item in items | limitBy 10">{{ item }}</p>
+```
+Используйте метод JavaScript .slice:
+```
+<p v-for="item in filteredItems">{{ item }}</p>
+```
+```
+computed: {
+  filteredItems: function () {
+    return this.items.slice(0, 10)
+  }
+}
+```
+
+###3. Замена filterBy
+Вместо
+```
+<p v-for="user in users | filterBy searchQuery in 'name'">{{ user.name }}</p>
+```
+Используйте метод JavaScript .filter:
+```
+<p v-for="user in filteredUsers">{{ user.name }}</p>
+```
+```
+computed: {
+  filteredUsers: function () {
+    var self = this
+    return self.users.filter(function (user) {
+      return user.name.indexOf(self.searchQuery) !== -1
+    })
+  }
+}
+```
+Нативный метод JavaScript .filter может управлять большим комплексом операторов фильтрации, поэтому у вас есть полный доступ к мощности этого
+языка. Для примера, если вы хотите найти все активных юзеров без учета регистра их имени и электронной почты, то:
+```
+var self = this
+self.users.filter(function (user) {
+  var searchRegex = new RegExp(self.searchQuery, 'i')
+  return user.isActive && (
+    searchRegex.test(user.name) ||
+    searchRegex.test(user.email)
+  )
+})
+```
+
+###4. Замена orderBy
+Вместо
+```
+<p v-for="user in users | orderBy 'name'">{{ user.name }}</p>
+```
+Используйте метод _.orderBy (или, возможно, _.sortBy) библиотеки lodash:
+```
+<p v-for="user in orderedUsers">{{ user.name }}</p>
+```
+```
+computed: {
+  orderedUsers: function () {
+    return _.orderBy(this.users, 'name')
+  }
+}
+```
+Так же это применимо к множеству объектов:
+```
+_.orderBy(this.users, ['name', 'last_login'], ['asc', 'desc'])
+```
+
+##Синтаксис аргументов фильтрации (изменен)
+Теперь синтаксис лучше адаптирован под функции JavaScript. Устаревший синтаксис подразумевает разделение с помощью пробелов:
+```
+<p>{{ date | formatDate 'YY-MM-DD' timeZone }}</p>
+```
+Мы обернули аргументы в скобки и другие разделители для удобства:
+```
+<p>{{ date | formatDate('YY-MM-DD', timeZone) }}</p>
+```
+
+##Встроенные текстовые фильтры удалены
+Несмотря на то, что фильтры для текстовых тегов все еще доступны, все эти фильтры будут удалены. Вместо этого, мы рекомендуем
+использовать специализированные библиотеки для решения проблем в каждом домене (например, date-fnc для форматирования даты, а
+accounting для валют).
+Для каждого встроенного текстового фильтра Vue будут описаны примеры ниже, как можно их заменить.
+
+###5. Замена json
+Вам больше не придется дебажить, так как Vue будет автоматически форматировать ваш код, будь то строка, число, массив или простой объект.
+Если вам нужен точно такой же функционал, как JSON.stringify JavaScript, то в этом случае используйте этот метод или другой известный вам способ.
+
+###5. Замена capitalize
+```
+text[0].toUpperCase() + text.slice(1)
+```
+
