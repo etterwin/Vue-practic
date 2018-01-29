@@ -32,8 +32,8 @@
         <transition name="slide">
             <aside v-show="show">
                 <ul slot="list" class="list">
-                    <li slot="item" class="item">1st item</li>
-                    <li slot="item" class="item">2nd item</li>
+                    <li slot="item" @click="show = !show" class="item">1st item</li>
+                    <li slot="item" @click="show = !show" class="item">2nd item</li>
                 </ul>
             </aside>
         </transition>
