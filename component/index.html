@@ -19,22 +19,71 @@
 </head>
 <body>
 
-    <div  class="container" id="app">
+    <div class="container" id="app">
 
-
+        <modal btn-text="Согласен">Вопрос 1?</modal>
+        <modal btn-text="Хорошо">Вопрос 2?</modal>
 
     </div>
 
+    <template id="template-modal">
+
+        <div class="wrapper">
+
+            <div class="overlay" v-show="active">
+
+                <div class="shadow" @click="close()"></div>
+
+                <div class="box">
+                    <section class="quiz">
+                        <slot></slot>
+                    </section>
+                    <section class="answers">
+                        <p class="answer" @click="onConfirm()">Yes</p>
+                        <p class="answer" @click="onCancel()">{{ btnText }}</p>
+                    </section>
+                </div>
+
+            </div>
+
+            <a class="btn" @click.prevent="open()">Open modal window</a>
+
+        </div>
+
+    </template>
+
     <!-- script -->
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                show: false
-            }
-        })
-    </script>
 
+        Vue.component('modal', {
+            template: '#template-modal',
+            data: function() {
+                return {
+                    active: false
+                };
+            },
+            props: ['btnText'],
+            methods: {
+                open: function() {
+                    this.active = true;
+                },
+                close: function() {
+                    this.active = false;
+                },
+                onCancel: function() {
+                    this.close();
+                },
+                onConfirm: function() {
+                    this.close();
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app'
+        });
+
+    </script>
 
 </body>
 </html>

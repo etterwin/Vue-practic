@@ -6,64 +6,77 @@
   outline: none;
   font-family: sans-serif;
   color: #262626;
-  font-size: 18px; }
+  font-size: 18px;
+}
 
 body {
   height: 100vh;
   width: 100%;
   display: flex;
   background: #f4f4f4;
-  position: relative; }
+}
 
 .container {
-  width: 100%; }
-
-.header {
+  position: relative;
+  height: 100vh;
   width: 100%;
-  position: fixed;
-  z-index: 2;
-  background: white;
-  height: 50px;
   display: flex;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1); }
-
-.menu-btn {
-  margin: auto auto auto 20px; }
+}
 
 .btn {
-  display: block;
-  height: 25px;
-  width: 25px;
-  cursor: pointer; }
+  margin: auto;
+  color: #2989d8;
+  padding: 5px;
+  border-bottom: 3px dotted #2989d8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #00d8d7;
+    border-bottom: 3px dotted #00d8d7;
+  }
+}
 
-aside {
+.overlay {
   position: fixed;
-  z-index: 1;
-  top: 50px;
+  background: rgba(0,0,0,0.3);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  top: 0;
   left: 0;
-  width: 250px;
+}
+
+.box {
+  margin: auto;
+  width: 200px;
+}
+
+.quiz {
+  text-align: center;
+  padding: 20px 0;
+  color: #2989d8;
   background: white;
-  height: calc(100vh - 50px);
-  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  display: flex; }
+  border-bottom: 3px dotted #2989d8;
+  border-radius: 4px 4px 0 0;
+  cursor: default;
+}
 
-.list {
-  margin: 20px auto auto 25px;
-  list-style: none; }
+.answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0;
+  background: #f2f2f2;
+  border-radius: 0 0 4px 4px;
+}
 
-.item {
-  padding: 5px 0;
-  cursor: pointer;}
-
-.slide-enter-active,
-.slide-leave-active {
-  left: -100%;
-  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);}
-
-.slide-enter,
-.slide-leave-to {
-  left: -100%;
-  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); }
-
-
+.answer {
+  cursor: pointer;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    color: #2989d8;
+    border-bottom: 2px solid #2989d8;
+  }
+}
