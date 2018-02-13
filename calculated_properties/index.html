@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculates properties</title>
+    <link rel="shortcut icon" href="assets/pictures/img/paw.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="app">
+
+        <form>
+            <span>{{ count }}/30</span>
+            <textarea v-model="text"></textarea>
+            <button>Submit</button>
+        </form>
+
+    </div>
+
+    <!-- script -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                text: ''
+            },
+            computed: {
+                count: function () {
+                    return this.text.length
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>
