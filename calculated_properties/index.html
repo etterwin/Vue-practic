@@ -24,7 +24,7 @@
         <form>
             <span>{{ count }}/30</span>
             <textarea v-model="text"></textarea>
-            <button>Submit</button>
+            <button v-if="count <= 30">Submit</button>
         </form>
 
     </div>
