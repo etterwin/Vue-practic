@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic components</title>
+    <link rel="shortcut icon" href="assets/pictures/img/paw.png" type="image/png" />
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="app">
+
+        <nav class="nav">
+            <ul class="list">
+                <li class="item">
+                    <a @click="switchView('square')">Square</a>
+                </li>
+                <li class="item">
+                    <a @click="switchView('triangle')">Triangle</a>
+                </li>
+                <li class="item">
+                    <a @click="switchView('krug')">Circle</a>
+                </li>
+                <li class="item">
+                    <a @click="switchView('ellips')">Ellipse</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main">
+
+            <component :is="currentView"></component>
+
+        </main>
+
+    </div>
+
+    <template id="square-template">
+        <div class="square"></div>
+    </template>
+
+    <template id="triangle-template">
+        <div class="triangle"></div>
+    </template>
+
+    <template id="krug-template">
+        <div class="circle"></div>
+    </template>
+
+    <template id="ellips-template">
+        <div class="ellips"></div>
+    </template>
+
+    <!-- script -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
