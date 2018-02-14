@@ -37,41 +37,63 @@ body {
   text-transform: uppercase;
   opacity: 0.65;
   text-decoration: none;
-  transition: all .3s ease-in-out; }
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); }
   .item a:hover {
     opacity: 1; }
 
 .main {
-  display: flex;
+  position: relative;
   width: 100%;
   margin: auto; }
 
 .square {
-  margin: auto;
   background: #2989d8;
   width: 100px;
-  height: 100px; }
+  height: 100px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -50px; }
 
 .triangle {
-  margin: auto;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 60px 100px 60px;
-  border-color: transparent transparent #00d8a7 transparent; }
+  border-color: transparent transparent #00d8a7 transparent;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -60px; }
 
 .circle {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: auto;
-  background: #ff2f93; }
+  background: #ff2f93;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -50px; }
 
 .ellips {
   width: 200px;
   height: 100px;
   border-radius: 50%;
-  margin: auto;
-  background: #ffe414; }
+  background: #ffe414;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -100px; }
+
+.switch-enter-active,
+.switch-leave-active {
+  left: 50%;
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); }
+
+.switch-enter,
+.switch-leave-to {
+  left: -100%;
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); }
 
 /*# sourceMappingURL=style.css.map */

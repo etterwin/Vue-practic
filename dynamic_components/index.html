@@ -40,7 +40,9 @@
 
         <main class="main">
 
-            <component :is="currentView"></component>
+            <transition name="switch">
+                <component :is="currentView"></component>
+            </transition>
 
         </main>
 
