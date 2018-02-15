@@ -9,8 +9,6 @@ module.export = {
         };
     }
 };
-
-module.export = hello;
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
@@ -24,7 +22,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-d7dfe388", __vue__options__)
   } else {
-    hotAPI.reload("data-v-d7dfe388", __vue__options__)
+    hotAPI.rerender("data-v-d7dfe388", __vue__options__)
   }
 })()}
 },{"vue":5,"vue-hot-reload-api":4}],2:[function(require,module,exports){
@@ -32,11 +30,14 @@ let Vue = require('vue');
 let hello = require('./components/e.vue');
 
 new Vue({
-   el: 'body',
-    components: {
-      hello: hello
+    el: '#app',
+    render: function (createElement) {
+        return createElement('h1', 'Hello, ');
     }
+
 });
+
+
 },{"./components/e.vue":1,"vue":5}],3:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};

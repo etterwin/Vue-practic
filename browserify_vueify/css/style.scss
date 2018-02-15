@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: url("https://s24.postimg.org/p4k2bw7f9/stardust1.png"), black;
+}
+
+.wrapper {
+  margin: auto;
+}
+
+.logo {
+  display: block;
+  max-height: 150px;
+  margin: 10px auto;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 46px;
+  margin-right: 15px;
+}
+
+.img {
+  max-width: 300px;
+  max-height: 90px;
+}

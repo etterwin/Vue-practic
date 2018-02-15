@@ -10,6 +10,4 @@
             }
         }
     };
-
-    module.export = hello;
 </script>

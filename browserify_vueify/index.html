@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Try Browserify</title>
+    <link rel="shortcut icon" href="assets/ico/favicon.ico" />
+
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
 </head>
 <body>
 
-    <hello></hello>
+<div class="wrapper" >
 
-    <script src="main.js"></script>
+    <img src="assets/svg/logo.svg" class="logo" />
+
+    <section>
+        <div class="container" id="app">
+            <hello></hello>
+        </div>
+        <img src="assets/svg/browserify.svg" class="img" />
+    </section>
+
+</div>
+
+<script src="build.js"></script>
 
 </body>
 </html>
