@@ -1,22 +1,11 @@
 <template>
-  <div class="contacts-wrapper">
-    <section class="wrapper">
-      <h2>Contacts</h2>
-    </section>
-  </div>
+  <section class="content-wrapper">
+    <h2 class="content-caption">Contacts</h2>
+  </section>
 </template>
 
 <style>
-  .contacts-wrapper {
-    width: 100%;
-    height: 100vh;
+  .contacts {
     background: #7d5fff;
-  }
-
-  .wrapper {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
   }
 </style>
