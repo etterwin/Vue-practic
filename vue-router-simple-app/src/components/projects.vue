@@ -3,9 +3,3 @@
     <h2 class="content-caption">Projects</h2>
   </section>
 </template>
-
-<style>
-  .projects {
-    background: #d9534f;
-  }
-</style>
