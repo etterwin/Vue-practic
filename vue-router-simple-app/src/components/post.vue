@@ -13,7 +13,7 @@ module.exports = {
   data: function () {
     return {
       posts: posts,
-      post: null
+      post: !null//я хз блять
     }
   },
   created: function () {

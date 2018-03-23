@@ -2,7 +2,7 @@
   <section class="content-wrapper">
     <h2 class="content-caption">Blog</h2>
     <div class="post-wrapper">
-      <div class="post__container" v-for="(post, index) in posts">
+      <div class="post__container" v-for="(post, index) in posts" v-bind:key="post.id">
         <div class="post__preview">
           <img :src="post.image" class="post-img"/>
           <div class="post-caption-wrapper">
