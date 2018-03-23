@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+LICENSE
+/vue-cli/node_modules/
+/vue-cli/.babelrc
+/vue-cli/.editorconfig

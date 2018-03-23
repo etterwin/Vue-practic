@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #191919; }
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex; }
+
+.container {
+  margin: auto; }
+
+/*# sourceMappingURL=style.css.map */
