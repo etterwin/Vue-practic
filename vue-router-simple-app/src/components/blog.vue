@@ -3,14 +3,16 @@
     <h2 class="content-caption">Blog</h2>
     <div class="post-wrapper">
       <div class="post__container" v-for="(post, index) in posts" v-bind:key="post.id">
-        <div class="post__preview">
-          <img :src="post.image" class="post-img"/>
-          <div class="post-caption-wrapper">
-            <h3 class="post-caption">{{ post.title }}</h3>
+        <router-link :to="{ name: 'post', params: { id: index } }">
+          <div class="post__preview">
+            <img :src="post.image" class="post-img"/>
+            <div class="post-caption-wrapper">
+              <h3 class="post-caption">{{ post.title }}</h3>
+            </div>
           </div>
-        </div>
+        </router-link>
         <p class="post-text">{{ post.body }}</p>
-        <router-link :to="{ name: 'post', params: { id: index } }">Read next</router-link>
+        <router-link :to="{ name: 'post', params: { id: index } }" class="post-btn">Read next</router-link>
       </div>
     </div>
   </section>

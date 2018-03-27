@@ -39,6 +39,7 @@ export default {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: #232B2B;
   }
 
   html, body {
@@ -77,6 +78,7 @@ export default {
     text-decoration: none;
     font-size: 18px;
     transition: all .3s ease-in-out;
+    letter-spacing: 1.2px;
   }
 
   .header-item-link:hover {
@@ -109,6 +111,10 @@ export default {
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  .content-text {
+    line-height: 1.5;
+  }
   /*end*/
 
   /*Post styles*/
@@ -126,6 +132,7 @@ export default {
     min-width: 300px;
     margin-bottom: 20px;
     border-radius: 4px;
+    padding-bottom: 15px;
     background: #f9f9f9;
     box-shadow: 0 5px 20px 5px rgba(0,0,0,0.1);
   }
@@ -145,7 +152,7 @@ export default {
     top:0;
     left: 0;
     z-index: 3;
-    opacity: .5;
+    opacity: 0;
     transition: all .3s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -165,7 +172,7 @@ export default {
     width: 100%;
   }
 
-  .post-img:hover .post-caption-wrapper {
+  .post__container:hover .post-caption-wrapper {
     opacity: 1;
   }
 
@@ -173,5 +180,18 @@ export default {
     color: #6b7a8f;
     padding: 15px;
     cursor: default;
+  }
+
+  .post-btn {
+    padding: 5px 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    border-radius: 4px;
+  }
+
+  .post-btn:hover {
+    background: #232B2B;
+    color: white;
   }
 </style>

@@ -1,5 +1,14 @@
 <template>
   <section class="content-wrapper">
     <h2 class="content-caption">Contacts</h2>
+    <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum turpis felis, feugiat eget bibendum id, condimentum non arcu. Donec ac tempor diam. Vivamus quis sapien nisl. Fusce eget neque auctor magna venenatis gravida non iaculis dolor. Nullam egestas facilisis lectus et lobortis. Nam facilisis est nunc. Etiam rutrum nulla lorem, ut facilisis massa mollis ut. Etiam diam eros, cursus sed dictum at, molestie ut leo. Aenean lacinia venenatis massa, ac varius est suscipit a. Sed condimentum volutpat odio vel blandit.
+
+      <br><br>Vivamus tempus turpis quis luctus viverra. In convallis mollis turpis, et euismod est mattis vel. Sed vel sodales erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed ante luctus, eleifend magna maximus, placerat nisl. Suspendisse eu orci odio. Donec luctus, enim vel molestie tempus, mauris lacus fringilla lacus, sit amet placerat ex quam sed odio.
+
+      <br><br>Aenean lorem neque, pellentesque eget ultricies quis, porttitor aliquet est. Quisque vehicula tincidunt ex vel venenatis. Quisque in enim eu augue dignissim aliquam. Ut egestas consequat tellus venenatis dapibus. Curabitur consequat rutrum elit, eget gravida metus maximus non. Nullam ultricies laoreet enim a gravida. Fusce maximus vestibulum diam sit amet dictum. Etiam elementum bibendum sapien, quis congue magna ullamcorper eu.
+
+      <br><br>Pellentesque mattis eu enim ullamcorper lobortis. Nunc non ultrices velit. Duis efficitur finibus nisi, id ullamcorper erat pellentesque in. Morbi sit amet sagittis dolor, eu ornare risus. Curabitur pretium accumsan augue, non dapibus metus lobortis ut. Donec convallis orci et nibh pretium vehicula. Aenean auctor vehicula varius. Aenean aliquam posuere nulla, et blandit dui varius id. Aliquam tempus mi vel tellus blandit, sit amet vestibulum est eleifend. In lacinia nisi a ipsum ullamcorper placerat. Curabitur finibus turpis eu libero egestas fringilla.
+
+      <br><br>In tincidunt augue ut velit iaculis, nec varius eros gravida. Ut purus ligula, auctor vel blandit a, aliquet et urna. Proin a eros a ex hendrerit luctus pretium a est. Aliquam et nisi tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas a condimentum magna, in imperdiet nisi. Phasellus quis tempor neque, et interdum odio. Nam elit erat, tincidunt vel turpis ac, convallis molestie ligula. Sed hendrerit sem ut ex laoreet, at sagittis erat convallis. Vestibulum vulputate tempus eleifend. Pellentesque condimentum, elit nec pellentesque luctus, ipsum neque condimentum lacus, non interdum metus diam eget tellus. Morbi volutpat mattis urna, et gravida felis luctus sit amet. Nulla et mauris ut dui facilisis euismod.</p>
   </section>
 </template>
