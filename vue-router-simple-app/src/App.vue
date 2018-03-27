@@ -114,6 +114,7 @@ export default {
 
   .content-text {
     line-height: 1.5;
+    cursor: default;
   }
   /*end*/
 
