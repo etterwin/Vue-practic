@@ -81,16 +81,19 @@ export default {
     letter-spacing: 1.2px;
   }
 
-  .header-item-link:hover {
+  .header-item-link:hover,
+  .header-item-link:hover span {
     color: #307e80;
   }
 
   .header-item-link--small {
     font-size: 14px;
     font-weight: bold;
+    transition: all .3s ease-in-out;
   }
 
-  .header-item-link.router-link-exact-active.router-link-active {
+  .header-item-link.router-link-exact-active.router-link-active,
+  .header-item-link.router-link-exact-active.router-link-active span {
     color: #307e80;
   }
   /*end*/
